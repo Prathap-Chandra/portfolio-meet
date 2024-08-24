@@ -1,0 +1,16 @@
+.animate-typing {
+  display: inline-block; /* Ensures the span respects the document flow */
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 4s steps(30, end) infinite;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
