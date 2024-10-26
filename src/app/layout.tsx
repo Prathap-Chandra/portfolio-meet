@@ -1,6 +1,11 @@
-"use client";
-import NavBar from "@/components/Navbar";
-import "./globals.css";
+'use client';
+import NavBar from '@/components/Navbar';
+import './globals.css';
+import Home from './page';
+import SkillSection from '@/components/SkillSection';
+import EducationSection from '@/components/EducationSection';
+import AboutSection from '@/components/AboutSection';
+import BriefSection from '@/components/BriefSection';
 
 export default function RootLayout({
   children,
@@ -13,7 +18,7 @@ export default function RootLayout({
         <div className="relative w-full flex items-center justify-center">
           <NavBar />
         </div>
-        {children}
+        <main className="w-full">{children}</main>
       </body>
     </html>
   );

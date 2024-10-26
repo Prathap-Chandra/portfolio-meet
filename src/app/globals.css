@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&family=Playwrite+GB+S:ital@1&family=Rubik+Wet+Paint&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -31,3 +32,14 @@ body {
     text-wrap: balance;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.border-line {
+  height: 5px; /* Adjust the height to make the line thicker or thinner */
+  background-color: white; /* Change to any color you prefer */
+  margin: 20px 0; /* Adjust margin to control space around the line */
+}
+

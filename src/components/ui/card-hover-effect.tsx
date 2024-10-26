@@ -1,7 +1,17 @@
-import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
-import { useState } from "react";
+import { cn } from '@/lib/utils';
+import { AnimatePresence, motion } from 'framer-motion';
+import { useState } from 'react';
+import { Playfair_Display, Rubik_Wet_Paint } from 'next/font/google';
+
+const playFair = Playfair_Display({
+  subsets: ['latin'],
+  weight: '900',
+  style: 'italic',
+});
+const rubik = Rubik_Wet_Paint({
+  subsets: ['latin'],
+  weight: '400',
+});
 
 export const HoverEffect = ({
   items,
@@ -10,7 +20,7 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    message: string;
   }[];
   className?: string;
 }) => {
@@ -19,15 +29,14 @@ export const HoverEffect = ({
   return (
     <div
       className={cn(
-        "grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10",
+        'grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  py-10',
         className
       )}
     >
       {items.map((item, idx) => (
-        <Link
-          href={item?.link}
-          key={item?.link}
+        <div
           className="relative group  block p-2 h-full w-full"
+          key={item?.title}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
@@ -51,8 +60,9 @@ export const HoverEffect = ({
           <Card>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+            <CardMessage>{item.message}</CardMessage>
           </Card>
-        </Link>
+        </div>
       ))}
     </div>
   );
@@ -68,7 +78,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        'rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20',
         className
       )}
     >
@@ -86,9 +96,11 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-zinc-100 font-bold tracking-wide mt-4", className)}>
+    <p
+      className={`${rubik.className}text-zinc-100 font-bold tracking-wide mt-4 text-center`}
+    >
       {children}
-    </h4>
+    </p>
   );
 };
 export const CardDescription = ({
@@ -101,7 +113,25 @@ export const CardDescription = ({
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        'mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm text-center',
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+};
+export const CardMessage = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <p
+      className={cn(
+        ' text-zinc-400 tracking-wide leading-relaxed text-sm text-center',
         className
       )}
     >

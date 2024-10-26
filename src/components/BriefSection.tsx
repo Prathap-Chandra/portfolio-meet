@@ -1,9 +1,9 @@
-"use client";
-import "./style.css";
-import React from "react";
+'use client';
+import './style.css';
+import React from 'react';
 
-import { AnimatePresence, motion } from "framer-motion";
-import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+import { AnimatePresence, motion } from 'framer-motion';
+import { CanvasRevealEffect } from '@/components/ui/canvas-reveal-effect';
 function BriefSection() {
   const [hovered, setHovered] = React.useState(false);
 
@@ -11,34 +11,11 @@ function BriefSection() {
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="h-[40rem] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black w-full gap-4 mx-auto px-8 relative"
+      className="h-[40rem] flex flex-col lg:flex-row overflow-hidden items-center justify-center bg-black w-full gap-4 mx-auto px-4 relative"
     >
-      {/* <div className="text-center">
-        <div className="text-left">
-          <h1
-            style={{ position: "relative" }}
-            className="text-3xl md:text-5xl font-bold mb-4"
-          >
-            <span className="animate-typing">Hii, I&apos;m Meet Prajapati</span>
-          </h1>
-
-          <p className="text-base md:text-lg text-neutral-300 mt-4 mb-4">
-            I am a versatile software developer with a strong foundation in both
-            front-end and back-end development, as well as Android app
-            development.Currently, I am working as a backend developer at
-            Freecharge Pvt. Ltd., a subsidiary of Axis Bank, where I contribute
-            to building robust and scalable systems.
-          </p>
-          <p className="text-base md:text-lg text-neutral-300 mt-2 mb-4">
-            I am always eager to take on new challenges and believe in a growth
-            mindset that benefits not just my personal development but also the
-            company&apos;s success.
-          </p>
-        </div>
-      </div> */}
       <div className="text-center">
         <h1
-          style={{ position: "relative" }}
+          style={{ position: 'relative' }}
           className="md:text-5xl text-5xl font-bold text-center text-yellow-50 relative z-20 max-w-2xl mx-auto"
         >
           <span className="animate-typing">Hii, I&apos;m Meet Prajapati</span>
