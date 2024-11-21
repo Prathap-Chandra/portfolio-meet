@@ -1,5 +1,5 @@
 'use client';
-import './style.css';
+import '@/components/style.css';
 import React from 'react';
 
 import { AnimatePresence, motion } from 'framer-motion';

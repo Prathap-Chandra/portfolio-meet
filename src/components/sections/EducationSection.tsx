@@ -1,6 +1,6 @@
-'use cilent';
-import { HoverEffect } from './ui/card-hover-effect';
-import { GlareCard } from './ui/glare-card';
+'use client';
+import { HoverEffect } from '@/components/ui/card-hover-effect';
+import { GlareCard } from '@/components/ui/glare-card';
 import { Rubik_Wet_Paint } from 'next/font/google';
 
 const rubik = Rubik_Wet_Paint({
